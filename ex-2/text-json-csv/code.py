@@ -43,5 +43,5 @@ with open('output.txt' , 'r') as file2:
         csv_writer.writerow(data.keys())
         for row in data:
             print(type(row))
-            #output.writerow(row.values()) #values row
-            csv_writer.writerow(map(dict(row).values())) #values row
+            csv_writer.writerow(row.values()) #values row
+            #csv_writer.writerow(map(dict(row).values())) #values row
