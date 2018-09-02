@@ -26,7 +26,7 @@ with open ('input.txt', 'rt') as file1:
 
 #join both lists to form json
     dict_kv = dict(zip(key,value))
-    json_kv =json.dumps(dict_kv)
+    json_kv =json.dumps(dict_kv, indent =2))
     print(json_kv)
 
 #write json to new ourput file
@@ -38,8 +38,10 @@ with open('output.txt' , 'r') as file2:
     ifile2 = file2.read()
     data = json.loads(ifile2)
 
-#ofile2=csv.writer(open('output.csv','wb+'))
-    with open('output.txt' , 'wb+') as ofile2:
+    with open('output.csv' , 'w') as ofile2:
         csv_writer = csv.writer(ofile2)
-        for item in data:
-            ofile2.writerow([item['pk'], item['model']] + item['fields'].values())
+        csv_writer.writerow(data.keys())
+        for row in data:
+            print(type(row))
+            #output.writerow(row.values()) #values row
+            csv_writer.writerow(map(dict(row).values())) #values row
