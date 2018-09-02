@@ -26,7 +26,7 @@ with open ('input.txt', 'rt') as file1:
 
 #join both lists to form json
     dict_kv = dict(zip(key,value))
-    json_kv =json.dumps(dict_kv, indent =2))
+    json_kv =json.dumps(dict_kv, indent =2)
     print(json_kv)
 
 #write json to new ourput file
