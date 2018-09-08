@@ -1,0 +1,6 @@
+key=name
+value=deepa
+key=city
+value=chennai
+key=month
+value=november
